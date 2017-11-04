@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: LUG@AHPU
-subtitle:
-description:
-author: AHPULUG
+title: Lug@ahpu
+subtitle: Linux
+description: Ahpu linux group
+author: Lug@ahpu
 language:
 timezone:
 
@@ -14,15 +14,16 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
 root: /
-permalink: blog/:title/
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
 source_dir: source
 public_dir: public
-tag_dir: tags
+tag_dir: blog/tags
 archive_dir: blog
-category_dir: categories
+about_dir : blog/about
+category_dir: blog/categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -72,8 +73,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-#theme: landscape
 theme: materialize
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
