@@ -13,7 +13,7 @@
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Lug@ahpu">
 <meta property="og:description" content="Hello, Linux! 	welcome to the linux user group of ahpu.">
-<meta property="og:updated_time" content="2017-11-04T04:31:08.000Z">
+<meta property="og:updated_time" content="2017-11-04T12:13:06.543Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lug@ahpu">
 <meta name="twitter:description" content="Hello, Linux! 	welcome to the linux user group of ahpu.">
@@ -40,6 +40,8 @@
   
 
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro|Material+Icons|Raleway:400,300,700" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
   <link rel="stylesheet" href="/css/vendors.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -53,6 +55,22 @@
       return window.jQuery;
     });
   </script>
+  <style>
+    .tel{
+      color: white;
+    }
+    .tel:hover{
+      color: #12c1e8;
+    }
+    .qq{
+      color: white;
+    }
+    .qq:hover{
+      color: #ff7373;
+    }
+    .git{color: white;}.git:hover{color: #000000}
+    .cc{float: left; position: absolute;left: 1px;top: 30px;color: white;font-size: 12px}.cc:hover{color: grey}
+  </style>
 
 
 </head>
@@ -87,7 +105,9 @@
         <i class="material-icons">menu</i>
       </a>
     </div>
+    
   </nav>
+
 </div>
 
 <ul id="nav-mobile" class="side-nav">
@@ -107,9 +127,10 @@
 </ul>
 
 
-  <div id="main-container">
+  <div id="main-container" >
     
-         <div class="container center">
+         
+<div class="container center">
  
 <h4 class="color-featured">Hello, Linux!<h4>
 	<h5>welcome to the linux user group of ahpu.</h5>
@@ -121,17 +142,25 @@
       
   </div>
 
-  <footer class="page-footer grey darken-2" style="padding-top:30px
+  <footer class="page-footer grey darken-2" style="padding-top:30px">
     <div class="footer-copyright">
-      <div class="container">
-        &copy; 2017 Lug@ahpu &nbsp;<i class="fa fa-github" aria-hidden="true"></i>
+      <div class="container" style="color: white;position: relative;">
+        &copy; 2017 Lug@ahpu &nbsp;<a href="https://github.com/ahpulug/ahpulug-web" class="git" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+
 
         <div class="right">
           <!-- Powered by <a href="http://hexo.io/" rel="nofollow" class="white-text" target="_blank">Hexo</a> -->
-          Join us: &nbsp;<i class="fa fa-telegram" aria-hidden="true"></i>&nbsp;
-          <i class="fa fa-qq" aria-hidden="true"></i>
-
+          Join us: &nbsp;<a href="" alt="Telegram" class="tel"><i class="fa fa-telegram" aria-hidden="true" ></i></a>
+          &nbsp;
+          <a href="" class="qq"><i class="fa fa-qq" aria-hidden="true"></i></a>
+          <br>
+          Contact:&nbsp;
+          <a href="" class="qq"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>&nbsp;
+          <a href="" class="tel"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+           
         </div>
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc"><i class="fa fa-creative-commons" aria-hidden="true"></i> BY-NC-SA 4.0</a>
       </div>
     </div>
   </footer>

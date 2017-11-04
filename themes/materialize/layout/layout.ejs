@@ -54,6 +54,8 @@
   <% } %>
 
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro|Material+Icons|Raleway:400,300,700" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
   <%- css('css/vendors') %>
   <%- css('css/style') %>
@@ -89,7 +91,7 @@
 
   <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
 
-  <div id="main-container">
+  <div id="main-container" >
     
          <%- body %>
       
@@ -113,12 +115,13 @@
           <a href="" class="tel"><i class="fa fa-twitter" aria-hidden="true"></i></a>
            
         </div>
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc"><i class="fa fa-creative-commons" aria-hidden="true"></i> BY-NC-SA 4.0</a>
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc" target="_blank"><i class="fa fa-creative-commons" aria-hidden="true"></i> BY-NC-SA 4.0</a>
       </div>
     </div>
   </footer>
 
   <%- js('js/app') %>
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 </body>
 </html>
