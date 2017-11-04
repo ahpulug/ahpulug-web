@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <%
+  var title = page.title || '';
+
+  if ( is_archive() ) { //TODO trocar para blog e o número da página
+    title = 'Blog';
+
+    if ( is_month() ) {
+      title += ': ' + page.year + '/' + page.month;
+    } else if ( is_year() ) {
+      title += ': ' + page.year;
+    }
+
+    if( page.current > 1 ) {
+      title += ' page ' + page.current;
+    }
+
+  } else if ( is_category() ) {
+    title = 'Category: ' + page.category;
+  } else if ( is_tag() ) {
+    title = 'Tag: ' + page.tag;
+  }
+
+  site.title = title;
+  %>
+  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+
+  <% if ( theme.rss ) { %>
+    <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml" />
+  <% } %>
+
+  <% if ( theme.favicon ) { %>
+  <!--[if lte IE 10 ]><%- favicon_tag(theme.favicon + '.ico') %><![endif]-->
+  <!--[if !IE]><!-->
+  <%- favicon_tag(theme.favicon + '.png') %>
+
+  <meta name="msapplication-TileImage" content="<%- url_for( theme.favicon + '.png') %>"/>
+  <meta name="msapplication-TileColor" content="#000000"/>
+
+  <link rel="apple-touch-icon" href="<%- url_for('images/apple-touch-icon-57x57.png') %>" />
+  <link rel="apple-touch-icon" sizes="72x72" href="<%- url_for('images/apple-touch-icon-72x72.png') %>" />
+  <link rel="apple-touch-icon" sizes="114x114" href="<%- url_for('images/apple-touch-icon-114x114.png') %>" />
+  <link rel="apple-touch-icon" sizes="144x144" href="<%- url_for('images/apple-touch-icon-144x144.png') %>" />
+
+  <link rel="icon" sizes="256x256" href="<%- url_for( theme.favicon + '.png' ) %>" />
+  <!--<![endif]-->
+  <% } %>
+
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro|Material+Icons|Raleway:400,300,700" rel="stylesheet" type="text/css" />
+
+  <%- css('css/vendors') %>
+  <%- css('css/style') %>
+  <%- partial('_partial/google-analytics') %>
+
+  <%- js('js/vendors') %>
+
+  <script>
+    define('jquery', function () {
+      return window.jQuery;
+    });
+  </script>
+
+
+</head>
+<body>
+
+  <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+
+  <div id="main-container">
+    
+         <%- body %>
+      
+  </div>
+
+  <footer class="page-footer grey darken-2" style="padding-top:30px
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %> &nbsp;<i class="fa fa-github" aria-hidden="true"></i>
+
+        <div class="right">
+          <!-- Powered by <a href="http://hexo.io/" rel="nofollow" class="white-text" target="_blank">Hexo</a> -->
+          Join us: &nbsp;<i class="fa fa-telegram" aria-hidden="true"></i>&nbsp;
+          <i class="fa fa-qq" aria-hidden="true"></i>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <%- js('js/app') %>
+
+</body>
+</html>

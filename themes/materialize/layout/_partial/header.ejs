@@ -1,0 +1,31 @@
+<div class="navbar-fixed">
+  <nav id="main-navbar" class="grey lighten-5 z-depth-0" role="navigation">
+    <div class="nav-wrapper container">
+
+      <a id="logo-container" href="<%- url_for() %>" class="brand-logo center-align">
+        <span><%= config.title %></span>
+        <sub><%= config.subtitle %></sub>
+      </a>
+
+      <ul class="right hide-on-med-and-down">
+        <% for (var i in theme.menu){ %>
+          <li>
+            <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+          </li>
+        <% } %>
+      </ul>
+
+      <a href="#" data-activates="nav-mobile" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<ul id="nav-mobile" class="side-nav">
+  <% for (var i in theme.menu){ %>
+  <li>
+    <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+  </li>
+  <% } %>
+</ul>

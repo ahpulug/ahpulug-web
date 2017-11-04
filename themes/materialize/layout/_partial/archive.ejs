@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+
+      <% if ( is_tag() ) { %>
+        <h2 class="header color-featured">Tag: <%- page.tag %></h2>
+      <% } %>
+
+      <% page.posts.each(function(post) { %>
+        <%- partial('article', {post: post, index: true}) %>
+      <% }) %>
+
+
+      <% if (page.total > 1) { %>
+        <nav id="page-nav">
+          <%- paginator({
+            prev_text: '&laquo; Prev',
+            next_text: 'Next &raquo;'
+          }) %>
+        </nav>
+      <% } %>
+
+
+
+    </div>
+  </div>
+</div>

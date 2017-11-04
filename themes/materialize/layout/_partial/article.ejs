@@ -1,0 +1,93 @@
+<% if ( is_post() || is_page() ) { %>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+<% } %>
+
+      <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+
+        <div class="article-inner">
+          <%- partial('post/gallery') %>
+
+          <header class="article-header">
+          <% if (post.link || post.title){ %>
+              <%- partial('post/title', {class_name: 'article-title'}) %>
+          <% } %>
+
+            <div class="article-meta">
+              <i class="fa fa-calendar"></i>
+              <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, 'MMM DD, YYYY') %></time>
+            </div>
+          </header>
+
+
+          <div class="article-entry " itemprop="articleBody">
+            <% if (post.excerpt && index){ %>
+              <%- post.excerpt %>
+            <% } else { %>
+              <%- post.content %>
+            <% } %>
+          </div>
+
+          <% if (post.excerpt && index && theme.excerpt_link) { %>
+            <p class="article-more-link">
+              <a href="<%- url_for(post.path) %>#more" class="waves-effect waves-light btn red lighten-2">
+                <%= theme.excerpt_link %>
+                &nbsp;
+                <i class="fa fa-plus-circle"></i>
+              </a>
+            </p>
+          <% } %>
+
+          <footer class="article-footer">
+            <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link">Share</a>
+            <% if (post.comments && config.disqus_shortname){ %>
+              <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link">Comments</a>
+            <% } %>
+            <%- partial('post/tag') %>
+          </footer>
+
+        </div>
+
+        <% if (!index){ %>
+          <%- partial('post/nav') %>
+        <% } %>
+      </article>
+
+
+      <% if (!index && post.comments && config.disqus_shortname){ %>
+
+      <hr />
+
+      <section id="comments">
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+      </section>
+      <% } %>
+
+
+<% if ( is_post() || is_page() ) { %>
+    </div>
+  </div>
+</div>
+
+
+  <% if (config.disqus_shortname) { %>
+  <script>
+    var disqus_shortname = '<%= config.disqus_shortname %>';
+    <% if ( page.permalink ) { %>
+    var disqus_url = '<%= page.permalink %>';
+    <% } %>
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <% } %>
+
+<% } %>

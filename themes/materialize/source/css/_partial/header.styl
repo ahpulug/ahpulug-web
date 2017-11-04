@@ -1,0 +1,50 @@
+
+#main-navbar {
+  a {
+    color: color-default;
+  }
+
+  ul a:hover {
+    background none;
+    color: color-featured;
+  }
+
+  &,
+  .nav-wrapper i,
+  a.button-collapse,
+  a.button-collapse i {
+    height: navbar-height;
+    line-height: navbar-height;
+  }
+
+  a.button-collapse {
+    margin: 0;
+  }
+}
+
+.navbar-fixed {
+  height: navbar-height;
+}
+
+#logo-container {
+  margin-top: 12px;
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+
+  @media (max-width: 390px) {
+    margin-left: 20px;
+    font-size: 34px
+  }
+
+  > * {
+    display: block;
+    line-height: 1em;
+  }
+
+  sub {
+    font-size: 50%;
+    color: color-featured;
+  }
+}
