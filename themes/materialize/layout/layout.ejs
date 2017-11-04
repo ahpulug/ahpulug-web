@@ -66,6 +66,21 @@
       return window.jQuery;
     });
   </script>
+  <style>
+    .tel{
+      color: white;
+    }
+    .tel:hover{
+      color: #12c1e8;
+    }
+    .qq{
+      color: white;
+    }
+    .qq:hover{
+      color: #ff7373;
+    }
+    .git{color: white;}.git:hover{color: #000000}
+  </style>
 
 
 </head>
@@ -81,13 +96,14 @@
 
   <footer class="page-footer grey darken-2" style="padding-top:30px">
     <div class="footer-copyright">
-      <div class="container">
-        &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %> &nbsp;<i class="fa fa-github" aria-hidden="true"></i>
+      <div class="container" style="color: white">
+        &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %> &nbsp;<a href="" class="git"><i class="fa fa-github" aria-hidden="true"></i></a>
 
         <div class="right">
           <!-- Powered by <a href="http://hexo.io/" rel="nofollow" class="white-text" target="_blank">Hexo</a> -->
-          Join us: &nbsp;<i class="fa fa-telegram" aria-hidden="true"></i>&nbsp;
-          <i class="fa fa-qq" aria-hidden="true"></i>
+          Join us: &nbsp;<a href="" alt="Telegram" class="tel"><i class="fa fa-telegram" aria-hidden="true" ></i></a>
+          &nbsp;
+          <a href="" class="qq"><i class="fa fa-qq" aria-hidden="true"></i></a>
 
         </div>
       </div>
