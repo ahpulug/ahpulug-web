@@ -83,8 +83,8 @@
     }
     .git{color: white;}.git:hover{color: #000000}
     .cc{float: left; position: absolute;left: 1px;top: 30px;color: white;font-size: 12px}.cc:hover{color: grey}
-    .box{background-color:rgba(0, 0, 0, 0.27058823529411763);/*border: 2px dashed #eee;*/width:30%;height: 400px;float: left;margin: 0 14px; border-radius: 15px;box-shadow: 1px 1px 3px #9a9696;color: white;padding: 2px 15px;}
-    .box:hover{background-color:rgba(0, 0, 0, 0.33725490196078434);box-shadow: 1px 1px 3px 1px #9a9696}
+    .box{background-color:rgba(0, 0, 0, 0.27058823529411763);/*border: 2px dashed #eee;*/width:30%;height: 400px;float: left;margin: 0 14px; border-radius: 15px;box-shadow: 1px 1px 3px #9a9696;color: white;padding: 2px 15px;transition:0.4s}
+    .box:hover{background-color:rgba(0, 0, 0, 0.33725490196078434);box-shadow: 1px 1px 3px 1px #9a9696;}
     .fix{margin-top: 20px;padding-top: 50px}
     .admin{color: #5f5f5f!important;margin-left: 10px;text-decoration: none!important;}.admin:hover{color: black!important;}
     .slideInLeft{animation-name:slideInLeft;}
@@ -144,18 +144,20 @@
 var a_idx = 0;
 jQuery(document).ready(function($) {
   $("body").click(function(e) {
-    var a = new Array("Arch", "Ubuntu", "Debian", "Centos", "Deepin", "Fedora", "Mint" ,"openSUSE", "Kali", "Gentoo", "Manjaro", "Antergos");
-    var $i = $("<span/>").text(a[a_idx]);
-    a_idx = (a_idx + 1) % a.length;
+    var a = new Array("Arch", "Ubuntu", "Debian", "Centos", "Deepin", "Fedora", "Mint" ,"openSUSE", "Kali", "Gentoo", "Manjaro", "Redhat");
+    //var col=['black','blue','yellow','white','red','pink','green','grey','orange','purple'];
+    //var col_random=Math.floor(Math.random()*10);
+    var col=['#1793d3','#f57421','#c70036','purple','#10baee','#294172','#87cf3e','#73ba25','#fb3920','#8d86bb','#34be5b','red'];
+    var $i = $("<span/>").text(a[a_idx]); 
     var x = e.pageX,
     y = e.pageY;
     $i.css({
-      "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+      "z-index": 9999,
       "top": y - 20,
       "left": x,
       "position": "absolute",
       "font-weight": "bold",
-      "color": "#ff6651"
+      "color": col[a_idx]
     });
     $("body").append($i);
     $i.animate({
@@ -166,6 +168,7 @@ jQuery(document).ready(function($) {
     function() {
       $i.remove();
     });
+    a_idx = (a_idx + 1) % a.length;
   });
 });
 </script>

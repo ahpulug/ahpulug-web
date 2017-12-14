@@ -4,7 +4,8 @@
 
       <a id="logo-container" href="<%- url_for() %>" class="brand-logo center-align">
         <span><%= config.title %></span>
-        <sub><%= config.subtitle %></sub>
+        <sub id="string2" style="display: none;"><%= config.subtitle %></sub>
+        <sub id="showStr2"><%= config.subtitle %></sub>
       </a>
 
       <ul class="right hide-on-med-and-down">
@@ -23,6 +24,24 @@
   </nav>
 
 </div>
+<!-- <script>
+  var index = 0;  
+var str = document.getElementById("string").innerText;  
+function type() {  
+if(index == str.length+1) {  
+  // window.clearInterval(int)
+  
+  document.getElementById("showStr").innerText = str.substring(0,21);
+  window.clearInterval(int);
+}  
+document.getElementById("showStr").innerText = str.substring(0, index++)+'|';  
+}  
+
+  setInterval(type, 185)
+
+
+
+</script> -->
 
 <ul id="nav-mobile" class="side-nav">
   <% for (var i in theme.menu){ %>
