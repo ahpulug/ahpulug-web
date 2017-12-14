@@ -9,7 +9,20 @@ comments: false
 	<h5>welcome to the linux user group of ahpu.</h5>
 	<p></p>
 </div>
+<script>
+		var index = 0;  
+var str = document.getElementById("string2").innerText;  
+function type() {  
+if(index == str.length) {  
+  // window.clearInterval(int)
+  document.getElementById("showStr2").innerText = str.substring(0,22);
+  window.clearInterval(int)
+}  
+document.getElementById("showStr2").innerText = str.substring(0, index++)+'|';  
+}  
 
+	setInterval(type, 185)
+</script>
 <div class="container fix">
 	<div class="row" style="margin: 0 0">
 		<div class="box ">

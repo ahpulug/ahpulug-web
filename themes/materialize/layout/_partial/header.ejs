@@ -1,6 +1,6 @@
 <div class="navbar-fixed">
   <nav id="main-navbar" class="grey lighten-5 z-depth-0" role="navigation" style="border-bottom:1px solid #eee;">
-    <div class="nav-wrapper container">
+    <div class="nav-wrapper container" style="position: static;">
 
       <a id="logo-container" href="<%- url_for() %>" class="brand-logo center-align">
         <span><%= config.title %></span>
@@ -9,6 +9,7 @@
       </a>
 
       <ul class="right hide-on-med-and-down">
+        <li><a href="https://search.ahpulug.org" class="search" target="_blank" title="Lug-Search"><i class="fa fa-search" aria-hidden="true"></i></a></li>
         <% for (var i in theme.menu){ %>
           <li>
             <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
@@ -19,29 +20,12 @@
       <a href="#" data-activates="nav-mobile" class="button-collapse">
         <i class="material-icons">menu</i>
       </a>
+      <a href="https://search.ahpulug.org" class="search min"><i class="fa fa-search" aria-hidden="true" ></i></a>
     </div>
 
   </nav>
 
 </div>
-<!-- <script>
-  var index = 0;  
-var str = document.getElementById("string").innerText;  
-function type() {  
-if(index == str.length+1) {  
-  // window.clearInterval(int)
-  
-  document.getElementById("showStr").innerText = str.substring(0,21);
-  window.clearInterval(int);
-}  
-document.getElementById("showStr").innerText = str.substring(0, index++)+'|';  
-}  
-
-  setInterval(type, 185)
-
-
-
-</script> -->
 
 <ul id="nav-mobile" class="side-nav">
   <% for (var i in theme.menu){ %>
