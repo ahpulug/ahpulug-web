@@ -2,66 +2,52 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <%
-  var title = page.title || '';
-
-  if ( is_archive() ) { //TODO trocar para blog e o número da página
-    title = 'Blog';
-
-    if ( is_month() ) {
-      title += ': ' + page.year + '/' + page.month;
-    } else if ( is_year() ) {
-      title += ': ' + page.year;
-    }
-
-    if( page.current > 1 ) {
-      title += ' page ' + page.current;
-    }
-
-  } else if ( is_category() ) {
-    title = 'Category: ' + page.category;
-  } else if ( is_tag() ) {
-    title = 'Tag: ' + page.tag;
-  }
-
-  site.title = title;
-  %>
-  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  
+  <title>Blog: 2017 | LUG@AHPU</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+  <meta name="description" content="AHPU Linux User Group">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LUG@AHPU">
+<meta property="og:url" content="http://yoursite.com/blog/2017/index.html">
+<meta property="og:site_name" content="LUG@AHPU">
+<meta property="og:description" content="AHPU Linux User Group">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LUG@AHPU">
+<meta name="twitter:description" content="AHPU Linux User Group">
 
-  <% if ( theme.rss ) { %>
-    <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml" />
-  <% } %>
+  
+    <link rel="alternate" href="/atom.xml" title="LUG@AHPU" type="application/atom+xml" />
+  
 
-  <% if ( theme.favicon ) { %>
-  <!--[if lte IE 10 ]><%- favicon_tag(theme.favicon + '.ico') %><![endif]-->
+  
+  <!--[if lte IE 10 ]><link rel="shortcut icon" href="/images/favicon.ico"><![endif]-->
   <!--[if !IE]><!-->
-  <%- favicon_tag(theme.favicon + '.png') %>
+  <link rel="shortcut icon" href="/images/favicon.png">
 
-  <meta name="msapplication-TileImage" content="<%- url_for( theme.favicon + '.png') %>"/>
+  <meta name="msapplication-TileImage" content="/images/favicon.png"/>
   <meta name="msapplication-TileColor" content="#000000"/>
 
-  <link rel="apple-touch-icon" href="<%- url_for('images/apple-touch-icon-57x57.png') %>" />
-  <link rel="apple-touch-icon" sizes="72x72" href="<%- url_for('images/apple-touch-icon-72x72.png') %>" />
-  <link rel="apple-touch-icon" sizes="114x114" href="<%- url_for('images/apple-touch-icon-114x114.png') %>" />
-  <link rel="apple-touch-icon" sizes="144x144" href="<%- url_for('images/apple-touch-icon-144x144.png') %>" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png" />
 
-  <link rel="icon" sizes="256x256" href="<%- url_for( theme.favicon + '.png' ) %>" />
+  <link rel="icon" sizes="256x256" href="/images/favicon.png" />
   <!--<![endif]-->
-  <% } %>
-  <link rel="icon" href="images/linux.png">
+  
+
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro|Material+Icons|Raleway:400,300,700" rel="stylesheet" type="text/css" />
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-  <%- css('css/vendors') %>
-  <%- css('css/style') %>
-  <%- partial('_partial/google-analytics') %>
+  <link rel="stylesheet" href="/css/vendors.css">
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-  <%- js('js/vendors') %>
+
+  <script src="/js/vendors.js"></script>
 
   <script>
     define('jquery', function () {
@@ -104,18 +90,140 @@
 </head>
 <body>
 
-  <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+  <div class="navbar-fixed">
+  <nav id="main-navbar" class="grey lighten-5 z-depth-0" role="navigation" style="border-bottom:1px solid #eee;">
+    <div class="nav-wrapper container" style="position: static;">
+
+      <a id="logo-container" href="/" class="brand-logo center-align">
+        <span>LUG@AHPU</span>
+        <sub id="string2" style="display: none;">AHPU Linux User Group</sub>
+        <sub id="showStr2">AHPU Linux User Group</sub>
+      </a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="https://search.ahpulug.org" class="search" target="_blank" title="Lug-Search"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+        
+          <li>
+            <a class="main-nav-link" href="/">Home</a>
+          </li>
+        
+          <li>
+            <a class="main-nav-link" href="/blog">Blog</a>
+          </li>
+        
+          <li>
+            <a class="main-nav-link" href="/about">About</a>
+          </li>
+        
+      </ul>
+
+      <a href="#" data-activates="nav-mobile" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+      <a href="https://search.ahpulug.org" class="search min"><i class="fa fa-search" aria-hidden="true" ></i></a>
+    </div>
+
+  </nav>
+
+</div>
+
+<ul id="nav-mobile" class="side-nav">
+  
+  <li>
+    <a class="main-nav-link" href="/">Home</a>
+  </li>
+  
+  <li>
+    <a class="main-nav-link" href="/blog">Blog</a>
+  </li>
+  
+  <li>
+    <a class="main-nav-link" href="/about">About</a>
+  </li>
+  
+</ul>
+
 
   <div id="main-container" >
     
-         <%- body %>
+         <div class="container">
+  <div class="row">
+    <div class="col s12">
+
+      
+
+      
+        
+
+      <article id="post-Hello-LUG-AHPU" class="article article-type-post" itemscope itemprop="blogPost">
+
+        <div class="article-inner">
+          
+
+          <header class="article-header">
+          
+              
+  
+    <h1 itemprop="name" class="header">
+      <a class="article-title " href="/2017/11/05/Hello-LUG-AHPU/">Hello LUG@AHPU</a>
+    </h1>
+  
+
+
+          
+
+            <div class="article-meta">
+              <i class="fa fa-calendar"></i>
+              <time datetime="2017-11-05T09:16:26.000Z" itemprop="datePublished">Nov 05, 2017</time>
+            </div>
+          </header>
+
+
+          <div class="article-entry " itemprop="articleBody">
+            
+              <p>OK,这就是我们的LUG,希望这会是一个新的开始!!!</p>
+
+            
+          </div>
+
+          
+
+          <footer class="article-footer">
+            <a data-url="http://yoursite.com/2017/11/05/Hello-LUG-AHPU/" data-id="cjb697hp800013oumkb2aog4m" class="article-share-link">Share</a>
+            
+            
+          </footer>
+
+        </div>
+
+        
+      </article>
+
+
+      
+
+
+
+
+      
+
+
+      
+
+
+
+    </div>
+  </div>
+</div>
+
+
       
   </div>
 
   <footer class="page-footer grey darken-2" style="padding-top:30px">
     <div class="footer-copyright">
       <div class="container" style="color: white;position: relative;">
-        &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %> &nbsp;<a href="https://github.com/ahpulug" class="git" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+        &copy; 2017 LUG@AHPU &nbsp;<a href="https://github.com/ahpulug" class="git" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
 
 
 
@@ -136,7 +244,7 @@
     </div>
   </footer>
   
-  <%- js('js/app') %>
+  <script src="/js/app.js"></script>
 <script  src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 <!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
  -->
