@@ -1,3 +1,4 @@
-# ahpulug-web
+# LUG@AHPU-WEB
+
 ### AHPU Linux User Group
-> [LUG@AHPU](https://ahpulug.org)
+> [LUG@AHPU](https://www.ahpulug.org)
