@@ -1,0 +1,117 @@
+html 
+  font-family: font-sans
+
+body
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+  color: color-default
+
+sub
+  bottom: 0
+
+strong 
+  font-weight: 600
+
+#main-container 
+//   margin-top: 20px
+  flex: 1 0 auto
+
+.container{
+    margin:0 auto;max-width:1280px;width:90%
+    }
+@media only screen and (min-width:601px){
+    .container{width:85%}
+    }
+@media only screen and (min-width:993px){
+    .container{width:65%}
+    }
+
+.tel{
+      color: white;
+    }
+    .tel:hover{
+      color: #12c1e8;
+    }
+    .qq{
+      color: white;
+    }
+    .qq:hover{
+      color: #ff7373;
+    }
+    .git{color: white;}.git:hover{color: #000000}
+    .cc{
+        float: left; 
+        position: absolute;
+        left: 1px;top: 30px;
+        color: white;font-size: 12px}
+    .cc:hover{color: grey}
+    .box:hover{
+        background-color:rgba(0, 0, 0, 0.33725490196078434);
+        box-shadow: 3px 5px 15px 0px #cccccc;
+        }
+    .fix{margin:20px auto;padding-top: 20px}
+    .admin{color: #5f5f5f!important;margin-left: 10px;text-decoration: none!important;}.admin:hover{color: black!important;}
+    .slideInLeft{animation-name:slideInLeft;}
+      .slideInright{animation-name:slideInright;}
+      .box1{height: 570px;margin: 20px 6%;width: 88%;}
+      .search{color: #01c854!important;}.search:hover{color: #24a95c!important}
+      .min{display: none;position: absolute;right: 10%}
+
+
+.bg-banner
+    position relative
+    top:-20px
+    height 25rem
+    width 100%
+    background: url('/images/bg.webp') no-repeat;
+    background-size: cover
+    box-shadow: 1px 5px 30px 1px #b1b7b5f7;
+    .title
+        position relative
+        top: 34%
+        
+.box
+    background-color:rgba(0, 0, 0, 0.27058823529411763);
+    width:30%;
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px #9a9696;
+    color: white;
+    padding: 15px;
+    transition:0.5s
+    p
+        margin:0 11px
+.box1
+    height: 570px;
+    margin: 20px 6%;
+    width: 88%;
+@media (max-width: 900px) 
+    .box{width: 90%;margin: 20px 5%;height: 340px;}
+    .fix{margin-top: 20px;padding-top: 0;}
+    .box1{height:450px ;margin: 20px 0;width: 100%;padding: 0}
+    .search{}
+    .min{display: block;}
+    .bg-banner{height: 18em;}
+    .linux-video
+        border: 1px dashed #eee;
+        padding: 5px;
+        border-radius: 5px;
+        width: 370px;
+        margin: 1rem auto 0;
+        iframe 
+            width: 360px
+            height 202px
+@media (min-width: 900px) 
+    .row
+       display: flex
+       justify-content: space-between
+    .linux-video
+        border: 2px dashed #eee;
+        padding: 15px;
+        border-radius: 10px;
+        width: 750px;
+        margin: 2rem auto 0;
+        iframe 
+            width 720px
+            height 405px

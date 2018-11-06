@@ -3,30 +3,47 @@ layout: index
 title:
 comments: false
 ---
-<div class="container center animated fadeInDown">
-	
-	<h4 class="color-featured">Hello, Linux!<h4>
-	<h5>welcome to the linux user group of ahpu.</h5>
-	<p></p>
-</div>
-<script>
-		var index = 0;  
-var str = document.getElementById("string2").innerText;  
-function type() {  
-if(index == str.length) {  
-  // window.clearInterval(int)
-  document.getElementById("showStr2").innerText = str.substring(0,22);
-  window.clearInterval(int)
-}  
-document.getElementById("showStr2").innerText = str.substring(0, index++)+'|';  
-}  
+<div class='bg-banner'>
+	<div class="container center animated fadeInDown title">
 
-	setInterval(type, 185)
+		<h4 class="color-featured" style="margin-top: 0;">Hello, Linux!<h4>
+			<h5 style="color: #fff">welcome to the linux user group of ahpu.</h5>
+			<p></p>
+	</div>
+</div>
+
+<script>
+	var index = 0;
+	var str = document.getElementById("string2").innerText;
+	// for (;;) {
+	// 	setTimeout(function() {  
+	// 		if(index == str.length) {  
+	// 			// window.clearInterval(int)
+	// 			document.getElementById("showStr2").innerText = str.substring(0,22);
+	// 			// window.clearInterval(int);
+	// 			break;
+	// 		}	  
+	// 	document.getElementById("showStr2").innerText = str.substring(0, index++)+'|';  
+	// 	},200)
+	// }
+	function type() {
+		if (index == str.length) {
+			// window.clearInterval(int)
+			document.getElementById("showStr2").innerText = str.substring(0, 21);
+			console.info(`Welcome to ${str}!`);
+			window.clearInterval(clean);
+		} else {
+			document.getElementById("showStr2").innerText = str.substring(0, index++) + '|';
+		}
+	}
+	var clean = setInterval(type, 185)
 </script>
+
 <div class="container fix">
-	<div class="row" style="margin: 0 0">
+	<div class="row">
 		<div class="box ">
-			<p class="center" style="margin-bottom: 0"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;什么是ahpulug?</p><hr style="color: white;border: 0.5px solid;width: 95%">
+			<p class="center" style="margin-bottom: 0"><i class="fa fa-linux" aria-hidden="true"></i>&nbsp;什么是ahpulug?</p>
+			<hr style="color: white;border: 0.5px solid;width: 95%">
 			<p style="margin-top: 0px;"> > 安徽工程大学linux用户组是一个由安徽工程大学GNU/Linux爱好者发起的一个致力于传播自由软件文化、推广自由软件在安工程校园以及芜湖地区使用的兴趣交流小组．</p>
 			<a href="https://zh.wikipedia.org/wiki/Linux" class="admin">What is linux?</a><br />
 			<a href="https://zh.wikipedia.org/wiki/GNU" class="admin">What is GNU?</a><br />
@@ -35,15 +52,28 @@ document.getElementById("showStr2").innerText = str.substring(0, index++)+'|';
 		<div class="box">
 			<p class="center" style="margin-bottom: 0"><i class="fa fa-star-o" aria-hidden="true"></i>&nbsp;我们可以做什么？</p>
 			<hr style="color: white;border: 0.5px solid;width: 95%">
-			<p style="margin-top: 0px">> 作为一个以计算机科学技术为主导的组织，我们在推广linux和自由软件文化的同时，会涉及到很多计算机科学前沿技术和理论，帮助广大爱好者提高技术水平．</p><p style="margin:0">> 我们旨在为广大安工程以及芜湖地区GNU/Linux爱好者提供一个线上线下的交流平台． </p>
+			<p style="margin-top: 0px">> 作为一个以计算机科学技术为主导的兴趣组织，我们在推广linux和自由软件文化的同时，会涉及到很多计算机前沿理论和技术，帮助广大爱好者提高技术水平．</p>
+			<br> <p>> 我们旨在为广大安工程以及芜湖地区GNU/Linux爱好者提供一个线上线下的交流平台． </p>
 		</div>
 		<div class="box ">
 			<p class="center" style="margin-bottom: 0"><i class="fa fa-child" aria-hidden="true"></i>&nbsp;如何加入我们?</p>
 			<hr style="color: white;border: 0.5px solid;width: 95%">
-			<p style="margin-top: 0px">> 线上：请点击我们网站下方join us链接加入我们的qq群和telegram群组参与讨论，或者加入Googlegroup一起交流;</p>
-			
-			<p style="margin-top:0px ">> 线下：我们每周会定期举行一次lug聚会，由一位lug成员做技术分享，详情会发布在telegram channel、邮件列表以及qq群上．</p>
-		</p>
+			<p style="margin-top: 0px">> 线上：请点击我们网站下方join us链接加入我们的QQ群和TG群组参与讨论，或者加入Googlegroup一起交流;</p>
+			<br>
+			<p style="margin-top:0px ">> 线下：我们偶尔会举行一次lug聚会，由一位lug成员做技术分享，详情会发布在telegram channel、邮件列表以及qq群上．</p>
+			</p>
+		</div>
 	</div>
 </div>
+
+<div class="linux-video" style="margin-top: 3rem;">
+	<iframe src="https://www.youtube.com/embed/zA3vmx0GaO8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="linux-video">
+	<iframe src="https://www.youtube.com/embed/o8NPllzkFhE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="linux-video">
+	<iframe src="https://www.youtube.com/embed/vjMZssWMweA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>

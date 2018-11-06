@@ -69,50 +69,21 @@
     });
   </script>
   <style>
-    .tel{
-      color: white;
-    }
-    .tel:hover{
-      color: #12c1e8;
-    }
-    .qq{
-      color: white;
-    }
-    .qq:hover{
-      color: #ff7373;
-    }
-    .git{color: white;}.git:hover{color: #000000}
-    .cc{float: left; position: absolute;left: 1px;top: 30px;color: white;font-size: 12px}.cc:hover{color: grey}
-    .box{background-color:rgba(0, 0, 0, 0.27058823529411763);/*border: 2px dashed #eee;*/width:30%;height: 400px;float: left;margin: 0 14px; border-radius: 15px;box-shadow: 1px 1px 3px #9a9696;color: white;padding: 2px 15px;transition:0.4s}
-    .box:hover{background-color:rgba(0, 0, 0, 0.33725490196078434);box-shadow: 1px 1px 3px 1px #9a9696;}
-    .fix{margin-top: 20px;padding-top: 50px}
-    .admin{color: #5f5f5f!important;margin-left: 10px;text-decoration: none!important;}.admin:hover{color: black!important;}
-    .slideInLeft{animation-name:slideInLeft;}
-      .slideInright{animation-name:slideInright;}
-      .box1{height: 570px;margin: 20px 6%;width: 88%;}
-      .search{color: #01c854!important;}.search:hover{color: #24a95c!important}
-      .min{display: none;position: absolute;right: 10%}
-    @media (max-width: 900px) {
-      .box{width: 90%;margin: 6px 5%;height: 340px;}
-      .fix{margin-top: 20px;padding-top: 0;}
-      .box1{height:450px ;margin: 20px 0;width: 100%;padding: 0}
-      .search{}
-      .min{display: block;}
-    }
+    
   </style>
-
+  
 </head>
 <body>
 
   <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
 
-  <div id="main-container" >
+  <div id="main-container">
     
          <%- body %>
       
   </div>
 
-  <footer class="page-footer grey darken-2" style="padding-top:30px">
+  <footer class="page-footer grey darken-2" style="padding-top:30px;margin-top: 50px;">
     <div class="footer-copyright">
       <div class="container" style="color: white;position: relative;">
         &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %> &nbsp;<a href="https://github.com/ahpulug" class="git" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
@@ -121,7 +92,7 @@
 
         <div class="right">
           <!-- Powered by <a href="http://hexo.io/" rel="nofollow" class="white-text" target="_blank">Hexo</a> -->
-          Join us: &nbsp;<a href="https://t.me/joinchat/DryM2Q_AkIzblqmFYbtJ1Q" alt="Telegram" class="tel" target="_blank"><i class="fa fa-telegram" aria-hidden="true" ></i></a>
+          Join us: &nbsp;<a href="https://telegram.org" alt="Telegram" class="tel" target="_blank"><i class="fa fa-telegram" aria-hidden="true" ></i></a>
           &nbsp;
           <a href="//shang.qq.com/wpa/qunwpa?idkey=b7ec52a20de97440fc6b0c45616a328db5a15cf349dcc63fe71169456b743467" class="qq" id="qq"><i class="fa fa-qq" aria-hidden="true"></i></a>
           <br>
@@ -172,5 +143,16 @@ jQuery(document).ready(function($) {
   });
 });
 </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127045215-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-127045215-2');
+</script>
+
 </body>
 </html>

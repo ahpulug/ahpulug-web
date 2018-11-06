@@ -78,4 +78,8 @@ theme: materialize
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: rsync
+  host: 35.221.181.117
+  user: shadow771
+  root: ~/www/ahpu_lug
+  port: 22

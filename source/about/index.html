@@ -1,21 +1,19 @@
 <div class=" box container box1">
-    <div class="row" style="margin: 0px 5%;color: white;">
+    <div class="row2" style="margin: 0px 5%;color: white;">
       <div class="center animated zoomIn" style="color: white"><h2 style="margin-bottom: 15px">关于LUG@AHPU<i class="fa fa-linux " aria-hidden="true" style="color: #000a058a"></i></h2></div> <hr style="border: 1px solid #fff">
       
 			<p style="margin: 15px 5px 5px">> Power by <a href="https://hexo.io/zh-cn/index.html" target="_blank" style="color: white">Hexo</a></p>
 			<p style="margin: 5px">> 本站编码和设计 by<a href="https://github.com/qwertyuiop6" target="_blank" class="admin">Shadow</a></p>
 			<p style="margin: 5px">> 管理部署和运维:<a href="https://github.com/ouyangshi" target="_blank" class="admin">ouyangjun</a></p>
       <div style="display: none;" id="string" > 
-			<p style="margin-left: 5px;font-size: 16px">感谢ouyang大佬为我们这个组织无偿贡献的域名和主机ヽ(・×・´)ゞ</p>
-			...........
-			........
+			..........
 			<p style="margin-left: 5px;font-size: 16px">sudo rm -rf /*</p>
-			<p style="margin-left: 5px;font-size: 16px">.....(逃</p>
+			<p style="margin-left: 5px;font-size: 16px">...(逃</p>
      </div> 
 <!-- <textarea  id="showStr"></textarea> -->
       
      
-</div>
+	</div>
 <p style="margin: 0 5%" id="showStr"></p>
 <script>
 	var index = 0;  
@@ -23,13 +21,14 @@ var str = document.getElementById("string").innerText;
 function type() {  
 if(index == str.length) {  
   // window.clearInterval(int)
-  document.getElementById("showStr").innerText = str.substring(0,40);
-  window.clearInterval(int)
-}  
+  document.getElementById("showStr").innerText ='';
+  window.clearInterval(clean);
+}else{
 document.getElementById("showStr").innerText = str.substring(0, index++)+'|';  
-}  
+}
+} 
 
-	setInterval(type, 185)
+var clean=setInterval(type, 185)
 
 
 
